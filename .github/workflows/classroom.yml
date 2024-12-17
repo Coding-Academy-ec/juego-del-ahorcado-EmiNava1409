@@ -25,7 +25,6 @@ jobs:
         max-score: 100
     - name: Autograding Reporter
       uses: education/autograding-grading-reporter@v1
-      env:
-        AHORCADO_TEST_RESULTS: "${{ steps.ahorcado-tests.outputs.result }}"
       with:
-        runners: "ubuntu-latest, windows-latest"
+        runners: "ahorcado-tests"
+
