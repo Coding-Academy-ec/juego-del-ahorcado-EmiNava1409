@@ -1,8 +1,8 @@
 name: Autograding Tests
 on:
-  - push
-  - workflow_dispatch
-  - repository_dispatch
+  push:
+  workflow_dispatch:
+  repository_dispatch:
 permissions:
   checks: write
   actions: read
@@ -28,4 +28,4 @@ jobs:
       env:
         AHORCADO_TEST_RESULTS: "${{ steps.ahorcado-tests.outputs.result }}"
       with:
-        runners: "ahorcado-tests"
+        runners: "ubuntu-latest, windows-latest"
